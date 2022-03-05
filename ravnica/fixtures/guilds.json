@@ -1,0 +1,82 @@
+[
+    {
+        "model": "ravnica.guild",
+        "pk": 1,
+        "fields": {
+            "name": "Azorius",
+            "full_name": "Azorius Senate"
+        }
+    },
+    {
+        "model": "ravnica.guild",
+        "pk": 2,
+        "fields": {
+            "name": "Boros",
+            "full_name": "Boros Legion"
+        }
+    },
+    {
+        "model": "ravnica.guild",
+        "pk": 3,
+        "fields": {
+            "name": "Dimir",
+            "full_name": "House Dimir"
+        }
+    },
+    {
+        "model": "ravnica.guild",
+        "pk": 4,
+        "fields": {
+            "name": "Rakdos",
+            "full_name": "Cult of Rakdos"
+        }
+    },
+    {
+        "model": "ravnica.guild",
+        "pk": 5,
+        "fields": {
+            "name": "Golgari",
+            "full_name": "Golgari Swarm"
+        }
+    },
+    {
+        "model": "ravnica.guild",
+        "pk": 6,
+        "fields": {
+            "name": "Gruul",
+            "full_name": "Gruul Clans"
+        }
+    },
+    {
+        "model": "ravnica.guild",
+        "pk": 7,
+        "fields": {
+            "name": "Izzet",
+            "full_name": "Izzet League"
+        }
+    },
+    {
+        "model": "ravnica.guild",
+        "pk": 8,
+        "fields": {
+            "name": "Orzhov",
+            "full_name": "Orzhov Syndicate"
+        }
+    },
+    {
+        "model": "ravnica.guild",
+        "pk": 9,
+        "fields": {
+            "name": "Selesnya",
+            "full_name": "Selesnya Conclave"
+        }
+    },
+    {
+        "model": "ravnica.guild",
+        "pk": 10,
+        "fields": {
+            "name": "Simic",
+            "full_name": "Simic Combine"
+        }
+    }
+]
