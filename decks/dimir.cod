@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cockatrice_deck version="1">
+    <deckname></deckname>
+    <comments></comments>
+    <zone name="main">
+        <card number="2" name="Dimir Locket"/>
+        <card number="3" name="Barrier of Bones"/>
+        <card number="1" name="Dimir Cutpurse"/>
+        <card number="2" name="Dimir Guildmage"/>
+        <card number="3" name="Dimir Spybug"/>
+        <card number="1" name="Doom Whisperer"/>
+        <card number="3" name="Nightveil Sprite"/>
+        <card number="1" name="Thief of Sanity"/>
+        <card number="4" name="Thoughtbound Phantasm"/>
+        <card number="2" name="Watcher in the Mist"/>
+        <card number="3" name="Whisper Agent"/>
+        <card number="1" name="Soul Ransom"/>
+        <card number="3" name="Unexplained Disappearance"/>
+        <card number="4" name="Dimir Aqueduct"/>
+        <card number="7" name="Island"/>
+        <card number="7" name="Swamp"/>
+        <card number="1" name="Connive // Concoct"/>
+        <card number="3" name="Consult the Necrosages"/>
+        <card number="2" name="Deadly Visit"/>
+        <card number="2" name="Last Thoughts"/>
+        <card number="2" name="Notion Rain"/>
+        <card number="3" name="Thought Erasure"/>
+    </zone>
+</cockatrice_deck>

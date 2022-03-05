@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cockatrice_deck version="1">
+    <deckname></deckname>
+    <comments></comments>
+    <zone name="main">
+        <card number="1" name="Autochthon Wurm"/>
+        <card number="3" name="Call of the Conclave"/>
+        <card number="1" name="Collective Blessing"/>
+        <card number="2" name="Conclave Cavalier"/>
+        <card number="2" name="Conclave Equenaut"/>
+        <card number="3" name="Druid's Deliverance"/>
+        <card number="3" name="Flower // Flourish"/>
+        <card number="1" name="Grove of the Guardian"/>
+        <card number="3" name="Rosemane Centaur"/>
+        <card number="2" name="Scatter the Seeds"/>
+        <card number="4" name="Selesnya Evangel"/>
+        <card number="4" name="Selesnya Guildgate"/>
+        <card number="2" name="Selesnya Signet"/>
+        <card number="2" name="Sprouting Renewal"/>
+        <card number="1" name="Tolsimir Wolfblood"/>
+        <card number="1" name="Trostani, Selesnya's Voice"/>
+        <card number="3" name="Vitu-Ghazi Guildmage"/>
+        <card number="1" name="Voice of Resurgence"/>
+        <card number="3" name="Wake the Reflections"/>
+        <card number="7" name="Forest"/>
+        <card number="7" name="Plains"/>
+        <card number="2" name="Devouring Light"/>
+        <card number="2" name="Sumala Woodshaper"/>
+    </zone>
+</cockatrice_deck>
