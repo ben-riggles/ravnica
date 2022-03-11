@@ -1,5 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from enum import Enum, Flag, auto
+
+from core.models.record import Record
 
 
 class RoundType(models.IntegerChoices):
@@ -14,3 +17,18 @@ class RoundType(models.IntegerChoices):
     R9 = 9, _('Round Nine')
     SEMIFINALS = 10, _('Semifinals')
     FINALS = 11, _('Finals')
+
+
+class RecordType(Flag):
+    REGULAR_SEASON = auto()
+    PLAYOFFS = auto()
+
+    @classmethod
+    def all():
+        return RecordType.REGULAR_SEASON & RecordType.PLAYOFFS
+
+
+class TiebreakerMethod(Enum):
+    HEAD_TO_HEAD = auto()
+    STR_OF_SCHED = auto()
+    SEEDING = auto()

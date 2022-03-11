@@ -1,3 +1,3 @@
 from .record import Record
-from .seedings import Seedings
+from .seeding import Seeding
 from .standings import Standings

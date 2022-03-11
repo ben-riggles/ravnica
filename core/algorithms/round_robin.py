@@ -23,5 +23,9 @@ def round_robin(round: RoundType) -> List[Tuple[int]]:
             return [(1, 3), (4, 2), (8, 5), (7, 6), (10, 9)]
         case RoundType.R9:
             return [(2, 1), (3, 4), (7, 5), (6, 10), (9, 8)]
+        case RoundType.SEMIFINALS:
+            return [(None, None), (None, None)]
+        case RoundType.FINALS:
+            return [(None, None)]
         case _:
             return []
