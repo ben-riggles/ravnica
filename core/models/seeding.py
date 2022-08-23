@@ -10,15 +10,8 @@ class SeedingError(Exception):
 
 class Seeding:
     def __init__(self, season:'Season' = None):
-        self._order = list(apps.get_model('ravnica', 'Guild').objects.order_by('name').all())
-        return
-        if season is None:
-            matches = apps.get_model('ravnica', 'Match').objects.all()
-        else:
-            matches = season.match_set.all()
-
-        if not matches:
-            self._order = list(apps.get_model('ravnica', 'Guild').objects.order_by('name').all())
+        self.season = season
+        self._order = self._load_data()
 
     def __getitem__(self, idx:int) -> 'Guild':
         if idx < 1 or idx > 10:
@@ -30,3 +23,17 @@ class Seeding:
 
     def __repr__(self):
         return f'Seeding({", ".join([str(x) for x in self._order])})'
+
+    def seedOf(self, guild:'Guild') -> int:
+        return self._order.index(guild) + 1
+
+    def _load_data(self):
+        if self.season is None:
+            return list(apps.get_model('ravnica', 'Guild').objects.order_by('name').all())
+
+        if not self.season.completed():
+            return self.season.standings[:]
+
+        playoffs = self.season.playoffs
+        standings = self.season.standings
+        return playoffs[:] + standings[4:]

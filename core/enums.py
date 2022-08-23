@@ -2,8 +2,6 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from enum import Enum, Flag, auto
 
-from core.models.record import Record
-
 
 class RoundType(models.IntegerChoices):
     R1 = 1, _('Round One')
@@ -17,6 +15,7 @@ class RoundType(models.IntegerChoices):
     R9 = 9, _('Round Nine')
     SEMIFINALS = 10, _('Semifinals')
     FINALS = 11, _('Finals')
+    COMPLETED = 12, _('Completed')
 
 
 class RecordType(Flag):
@@ -24,7 +23,7 @@ class RecordType(Flag):
     PLAYOFFS = auto()
 
     @classmethod
-    def all():
+    def all(_):
         return RecordType.REGULAR_SEASON & RecordType.PLAYOFFS
 
 

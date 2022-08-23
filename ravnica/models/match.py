@@ -23,3 +23,14 @@ class Match(models.Model):
         if self.away is None or self.home is None:
             return f'Match(season={self.season}, round={self.round})'
         return f'Match(season={self.season}, round={self.round}, {self.away.guild.name} @ {self.home.guild.name})'
+
+    @property
+    def loser(self):
+        if self.winner:
+            return self.home if self.away == self.winner else self.away
+        return None
+
+    def update(self, **kwargs):
+        for attr, value in kwargs.items():
+            setattr(self, attr, value)
+        self.save()

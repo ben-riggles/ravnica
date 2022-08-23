@@ -36,10 +36,10 @@ class Guild(models.Model):
             match_set = match_set.filter(season=season)
         if versus is not None:
             match_set = match_set.filter(models.Q(away__guild = versus) | models.Q(home__guild = versus))
-        if type | RecordType.REGULAR_SEASON:
-            match_set = match_set.filter(round__gt=RoundType.R9)
-        if type | RecordType.PLAYOFFS:
+        if type & RecordType.REGULAR_SEASON and not type & RecordType.PLAYOFFS:
             match_set = match_set.filter(round__lte=RoundType.R9)
+        if type & RecordType.PLAYOFFS and not type & RecordType.REGULAR_SEASON:
+            match_set = match_set.filter(round__gt=RoundType.R9)
 
         win_count = len(match_set.filter(winner__guild=self))
         return Record(wins=win_count, losses=len(match_set) - win_count)
