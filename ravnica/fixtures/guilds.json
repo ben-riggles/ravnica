@@ -4,7 +4,8 @@
         "pk": 1,
         "fields": {
             "name": "Azorius",
-            "full_name": "Azorius Senate"
+            "full_name": "Azorius Senate",
+            "short_name": "AZR"
         }
     },
     {
@@ -12,7 +13,8 @@
         "pk": 2,
         "fields": {
             "name": "Boros",
-            "full_name": "Boros Legion"
+            "full_name": "Boros Legion",
+            "short_name": "BOR"
         }
     },
     {
@@ -20,7 +22,8 @@
         "pk": 3,
         "fields": {
             "name": "Dimir",
-            "full_name": "House Dimir"
+            "full_name": "House Dimir",
+            "short_name": "DMR"
         }
     },
     {
@@ -28,7 +31,8 @@
         "pk": 4,
         "fields": {
             "name": "Rakdos",
-            "full_name": "Cult of Rakdos"
+            "full_name": "Cult of Rakdos",
+            "short_name": "RAK"
         }
     },
     {
@@ -36,7 +40,8 @@
         "pk": 5,
         "fields": {
             "name": "Golgari",
-            "full_name": "Golgari Swarm"
+            "full_name": "Golgari Swarm",
+            "short_name": "GOL"
         }
     },
     {
@@ -44,7 +49,8 @@
         "pk": 6,
         "fields": {
             "name": "Gruul",
-            "full_name": "Gruul Clans"
+            "full_name": "Gruul Clans",
+            "short_name": "GRL"
         }
     },
     {
@@ -52,7 +58,8 @@
         "pk": 7,
         "fields": {
             "name": "Izzet",
-            "full_name": "Izzet League"
+            "full_name": "Izzet League",
+            "short_name": "IZT"
         }
     },
     {
@@ -60,7 +67,8 @@
         "pk": 8,
         "fields": {
             "name": "Orzhov",
-            "full_name": "Orzhov Syndicate"
+            "full_name": "Orzhov Syndicate",
+            "short_name": "ORZ"
         }
     },
     {
@@ -68,7 +76,8 @@
         "pk": 9,
         "fields": {
             "name": "Selesnya",
-            "full_name": "Selesnya Conclave"
+            "full_name": "Selesnya Conclave",
+            "short_name": "SLN"
         }
     },
     {
@@ -76,7 +85,8 @@
         "pk": 10,
         "fields": {
             "name": "Simic",
-            "full_name": "Simic Combine"
+            "full_name": "Simic Combine",
+            "short_name": "SIM"
         }
     }
 ]

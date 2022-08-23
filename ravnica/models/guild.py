@@ -1,41 +1,51 @@
 from __future__ import annotations
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from ravnica.models import Season
+
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from pathlib import Path
 
-from core import Paths
-from core.enums import RecordType, RoundType
-from core.models import Record
-from ravnica.models import Deck, Match
+from ravnica.utils import Paths
+from ravnica.enums import RecordType, RoundType
+from ravnica.models import Record, Deck, Match
 from ravnica.models.deck import DeckLoadError
 
 
 class Guild(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=10)
-    full_name = models.CharField(max_length=50)
+    id: int = models.AutoField(primary_key=True)
+    name: str = models.CharField(max_length=10)
+    full_name: str = models.CharField(max_length=50)
+    short_name: str = models.CharField(max_length=3)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
 
-    def __repr__(self):
-        return f'Guild({self.name})'
+    def __repr__(self) -> str:
+        return f'Guild({self.short_name})'
 
     @property
-    def current_deck(self) -> Deck:
-        return self.deck_set.get(current=True)
+    def deck(self, season: Season = None) -> Deck:
+        if season is None:
+            return self.deck_set.get(current=True)
+        example_match: Match = season.match_set.filter(models.Q(away__guild = self) | models.Q(home__guild = self)).first()
+        return example_match.away if example_match.away.guild == self else example_match.home
 
     @property
     def deck_path(self) -> Path:
         return Paths.DECK_DIR.joinpath(f'{self.name.lower()}.cod')
 
-    def record(self, season:'Season' = None, versus:'Guild' = None, type=RecordType.all()):
+    def record(self, season: Season = None, versus: Deck | Guild = None, type: RecordType = RecordType.all()) -> Record:
         match_set = Match.objects.filter(models.Q(away__guild = self) | models.Q(home__guild = self))
         if season is not None:
             match_set = match_set.filter(season=season)
         if versus is not None:
-            match_set = match_set.filter(models.Q(away__guild = versus) | models.Q(home__guild = versus))
+            if isinstance(versus, Deck):
+                match_set = match_set.filter(models.Q(away = versus) | models.Q(home = versus))
+            else:
+                match_set = match_set.filter(models.Q(away__guild = versus) | models.Q(home__guild = versus))
         if type & RecordType.REGULAR_SEASON and not type & RecordType.PLAYOFFS:
             match_set = match_set.filter(round__lte=RoundType.R9)
         if type & RecordType.PLAYOFFS and not type & RecordType.REGULAR_SEASON:

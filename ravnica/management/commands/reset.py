@@ -10,7 +10,7 @@ class Command(BaseCommand):
     help = 'Reset the database with default tables and data'
     
     def handle(self, *args, **options):
-        db_loc = Path(settings.BASE_DIR).joinpath('ravnica/db.sqlite3')
+        db_loc = Path(settings.BASE_DIR).joinpath('db.sqlite3')
         if db_loc.exists():
             os.remove(db_loc.resolve())
 
