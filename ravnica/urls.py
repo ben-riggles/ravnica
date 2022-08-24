@@ -19,6 +19,11 @@ from django.views.generic.base import RedirectView
 
 from . import views
 
+from ravnica.models import Match, Deck, Guild, Season
+
+
+admin.site.register([Match, Deck, Guild, Season])
+
 
 urlpatterns = [
     path('', RedirectView.as_view(url='league/')),
