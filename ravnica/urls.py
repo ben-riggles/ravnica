@@ -26,7 +26,7 @@ admin.site.register([Match, Deck, Guild, Season])
 
 
 urlpatterns = [
-    path('', RedirectView.as_view(url='league/')),
+    path('', RedirectView.as_view(url='api/login')),
     path('league/', views.index, name='index'),
     path('admin/', admin.site.urls),
 ]

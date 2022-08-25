@@ -1,3 +1,4 @@
+from .base_model import BaseModel
 from .match import Match
 from .record import Record
 from .deck import Deck

@@ -6,15 +6,14 @@ from django.dispatch import receiver
 
 from ravnica.algorithms import round_robin
 from ravnica.enums import RoundType, RecordType
-from ravnica.models import Seeding, Standings, Match, Deck, Playoffs
+from ravnica.models import BaseModel, Seeding, Standings, Match, Deck, Playoffs
 
 
 class PostseasonError(Exception):
     pass
 
 
-class Season(models.Model):
-    id: int = models.AutoField(primary_key=True)
+class Season(BaseModel):
     number: int = models.IntegerField()
     name: str = models.CharField(max_length=200, default='')
     previous: Season = models.ForeignKey('self', default=None, blank=True, null=True, on_delete=models.SET_NULL)
@@ -40,7 +39,7 @@ class Season(models.Model):
         return Playoffs(season=self)
 
     @property
-    def winner(self) -> Deck:
+    def champion(self) -> Deck:
         return self.match_set.get(round=RoundType.FINALS).winner
 
     @property

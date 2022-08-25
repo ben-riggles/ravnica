@@ -38,6 +38,9 @@ class Standings:
     def placeOf(self, guild: Guild) -> int:
         return list(self._data).index(guild)
 
+    def __iter__(self):
+        return iter(self._data.items())
+
     def _load_data(self) -> OrderedDict[Guild, Record]:
         guilds: List[Guild] = list(apps.get_model('ravnica', 'Guild').objects.order_by('name').all())
 

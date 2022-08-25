@@ -5,7 +5,9 @@
         "fields": {
             "name": "Azorius",
             "full_name": "Azorius Senate",
-            "short_name": "AZR"
+            "short_name": "AZR",
+            "date_created": "2022-08-01 12:00",
+            "date_modified": "2022-08-01 12:00"
         }
     },
     {
@@ -14,7 +16,9 @@
         "fields": {
             "name": "Boros",
             "full_name": "Boros Legion",
-            "short_name": "BOR"
+            "short_name": "BOR",
+            "date_created": "2022-08-01 12:00",
+            "date_modified": "2022-08-01 12:00"
         }
     },
     {
@@ -23,7 +27,9 @@
         "fields": {
             "name": "Dimir",
             "full_name": "House Dimir",
-            "short_name": "DMR"
+            "short_name": "DMR",
+            "date_created": "2022-08-01 12:00",
+            "date_modified": "2022-08-01 12:00"
         }
     },
     {
@@ -32,7 +38,9 @@
         "fields": {
             "name": "Rakdos",
             "full_name": "Cult of Rakdos",
-            "short_name": "RAK"
+            "short_name": "RAK",
+            "date_created": "2022-08-01 12:00",
+            "date_modified": "2022-08-01 12:00"
         }
     },
     {
@@ -41,7 +49,9 @@
         "fields": {
             "name": "Golgari",
             "full_name": "Golgari Swarm",
-            "short_name": "GOL"
+            "short_name": "GOL",
+            "date_created": "2022-08-01 12:00",
+            "date_modified": "2022-08-01 12:00"
         }
     },
     {
@@ -50,7 +60,9 @@
         "fields": {
             "name": "Gruul",
             "full_name": "Gruul Clans",
-            "short_name": "GRL"
+            "short_name": "GRL",
+            "date_created": "2022-08-01 12:00",
+            "date_modified": "2022-08-01 12:00"
         }
     },
     {
@@ -59,7 +71,9 @@
         "fields": {
             "name": "Izzet",
             "full_name": "Izzet League",
-            "short_name": "IZT"
+            "short_name": "IZT",
+            "date_created": "2022-08-01 12:00",
+            "date_modified": "2022-08-01 12:00"
         }
     },
     {
@@ -68,7 +82,9 @@
         "fields": {
             "name": "Orzhov",
             "full_name": "Orzhov Syndicate",
-            "short_name": "ORZ"
+            "short_name": "ORZ",
+            "date_created": "2022-08-01 12:00",
+            "date_modified": "2022-08-01 12:00"
         }
     },
     {
@@ -77,7 +93,9 @@
         "fields": {
             "name": "Selesnya",
             "full_name": "Selesnya Conclave",
-            "short_name": "SLN"
+            "short_name": "SLN",
+            "date_created": "2022-08-01 12:00",
+            "date_modified": "2022-08-01 12:00"
         }
     },
     {
@@ -86,7 +104,9 @@
         "fields": {
             "name": "Simic",
             "full_name": "Simic Combine",
-            "short_name": "SIM"
+            "short_name": "SIM",
+            "date_created": "2022-08-01 12:00",
+            "date_modified": "2022-08-01 12:00"
         }
     }
 ]

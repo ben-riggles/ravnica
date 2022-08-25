@@ -5,10 +5,10 @@ if TYPE_CHECKING:
     
 from django.db import models
 from ravnica.enums import RoundType
+from ravnica.models import BaseModel
 
 
-class Match(models.Model):
-    id: int = models.AutoField(primary_key=True)
+class Match(BaseModel):
     season: Season = models.ForeignKey('ravnica.Season', on_delete=models.CASCADE)
     round: RoundType = models.IntegerField(choices=RoundType.choices)
     away: Deck = models.ForeignKey('ravnica.Deck', default=None, blank=True, null=True, on_delete=models.CASCADE, related_name='away_set')
@@ -23,7 +23,7 @@ class Match(models.Model):
     def __repr__(self) -> str:
         if self.away is None or self.home is None:
             return f'Match(season={self.season}, round={self.round})'
-        return f'Match(season={self.season}, round={self.round}, {self.away.guild.name} @ {self.home.guild.name})'
+        return f'Match(season={self.season}, round={self.round}, {self.away.guild.short_name} @ {self.home.guild.short_name})'
 
     @property
     def loser(self) -> Deck | None:

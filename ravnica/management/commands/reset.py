@@ -17,7 +17,11 @@ class Command(BaseCommand):
         migration_loc = Path(settings.BASE_DIR).joinpath('ravnica/migrations')
         if migration_loc.exists():
             shutil.rmtree(migration_loc.resolve())
+            
+        os.environ['DJANGO_SUPERUSER_USERNAME'] = 'admin'
+        os.environ['DJANGO_SUPERUSER_PASSWORD'] = 'drumstix38'
 
         call_command('makemigrations', 'ravnica')
         call_command('migrate')
         call_command('loaddata', 'guilds')
+        call_command('createsuperuser', '--noinput', '--email=fakeemail@fake.fake')

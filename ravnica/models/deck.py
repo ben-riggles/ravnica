@@ -4,15 +4,14 @@ if TYPE_CHECKING:
     from ravnica.models import Guild, Season
     
 from django.db import models
-from ravnica.models import Record
+from ravnica.models import BaseModel, Record
 
 
 class DeckLoadError(Exception):
     pass
 
 
-class Deck(models.Model):
-    id: int = models.AutoField(primary_key=True)
+class Deck(BaseModel):
     guild: Guild = models.ForeignKey('ravnica.Guild', on_delete=models.CASCADE)
     current: bool = models.BooleanField(default=False)
     content: bool = models.BinaryField()

@@ -10,12 +10,11 @@ from pathlib import Path
 
 from ravnica.utils import Paths
 from ravnica.enums import RecordType, RoundType
-from ravnica.models import Record, Deck, Match
+from ravnica.models import BaseModel, Record, Deck, Match
 from ravnica.models.deck import DeckLoadError
 
 
-class Guild(models.Model):
-    id: int = models.AutoField(primary_key=True)
+class Guild(BaseModel):
     name: str = models.CharField(max_length=10)
     full_name: str = models.CharField(max_length=50)
     short_name: str = models.CharField(max_length=3)
